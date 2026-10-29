@@ -7,7 +7,6 @@
   <meta name="theme-color" content="#0b1220" />
   <title>তথ্য সহায়তা কেন্দ্র</title>
 
-  <!-- Google Fonts - Noto Sans Bengali -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -15,15 +14,9 @@
   <style>
     :root {
       --bg-deep: #070b16;
-      --bg-navy: #0b1220;
       --card-bg: rgba(15, 23, 42, 0.72);
-      --card-border: rgba(148, 163, 184, 0.18);
       --text-primary: #f1f5f9;
       --text-secondary: #94a3b8;
-      --accent-cyan: #22d3ee;
-      --accent-blue: #3b82f6;
-      --accent-purple: #8b5cf6;
-      --accent-teal: #14b8a6;
       --glow-cyan: rgba(34, 211, 238, 0.35);
       --glow-blue: rgba(59, 130, 246, 0.3);
       --glow-purple: rgba(139, 92, 246, 0.28);
@@ -57,7 +50,6 @@
       line-height: 1.65;
     }
 
-    /* Animated Gradient Background */
     .bg-gradient {
       position: fixed;
       inset: 0;
@@ -76,7 +68,6 @@
       100% { opacity: 0.92; filter: brightness(1.08); }
     }
 
-    /* Floating Glow Orbs */
     .orb {
       position: fixed;
       border-radius: 50%;
@@ -128,7 +119,6 @@
       50% { transform: translate(-30px, 40px); }
     }
 
-    /* Main Card Container */
     .card-wrapper {
       position: relative;
       z-index: 10;
@@ -136,14 +126,13 @@
       max-width: 440px;
     }
 
-    /* Gradient Border Effect */
     .card {
       position: relative;
       background: var(--card-bg);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border-radius: var(--radius-card);
-      padding: 40px 32px 32px;
+      padding: 36px 32px 32px;
       text-align: center;
       box-shadow: var(--shadow-soft),
                   0 0 0 1px rgba(255, 255, 255, 0.05) inset;
@@ -171,7 +160,6 @@
       pointer-events: none;
     }
 
-    /* Soft inner glow */
     .card::after {
       content: "";
       position: absolute;
@@ -183,11 +171,23 @@
       pointer-events: none;
     }
 
-    /* Logo / Icon */
+    .site-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
+      background: linear-gradient(90deg, #67e8f9, #93c5fd, #c4b5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      z-index: 2;
+    }
+
     .logo {
       width: 78px;
       height: 78px;
-      margin: 0 auto 28px;
+      margin: 0 auto 24px;
       border-radius: 50%;
       background: linear-gradient(145deg, #0ea5e9, #2563eb, #7c3aed);
       display: flex;
@@ -214,9 +214,8 @@
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));
     }
 
-    /* Title */
     h1 {
-      font-size: 1.65rem;
+      font-size: 1.6rem;
       font-weight: 700;
       letter-spacing: -0.01em;
       margin-bottom: 14px;
@@ -228,7 +227,6 @@
       z-index: 2;
     }
 
-    /* Descriptions */
     .desc {
       font-size: 0.95rem;
       color: var(--text-secondary);
@@ -255,7 +253,6 @@
       z-index: 2;
     }
 
-    /* CTA Button */
     .cta {
       display: inline-flex;
       align-items: center;
@@ -314,7 +311,6 @@
       flex-shrink: 0;
     }
 
-    /* Footer notes */
     .note {
       margin-top: 22px;
       font-size: 0.82rem;
@@ -331,7 +327,6 @@
       z-index: 2;
     }
 
-    /* Subtle pulse on button for attention */
     @keyframes softPulse {
       0%, 100% { box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.5); }
       50% { box-shadow: 0 10px 30px -3px rgba(37, 99, 235, 0.7), 0 0 20px rgba(34, 211, 238, 0.2); }
@@ -345,25 +340,28 @@
       animation: none;
     }
 
-    /* Responsive */
     @media (max-width: 480px) {
       body {
         padding: 20px 14px;
       }
 
       .card {
-        padding: 32px 22px 26px;
+        padding: 30px 22px 26px;
         border-radius: 24px;
       }
 
+      .site-name {
+        font-size: 0.98rem;
+      }
+
       h1 {
-        font-size: 1.45rem;
+        font-size: 1.4rem;
       }
 
       .logo {
         width: 70px;
         height: 70px;
-        margin-bottom: 22px;
+        margin-bottom: 20px;
       }
 
       .logo svg {
@@ -387,11 +385,10 @@
       }
 
       h1 {
-        font-size: 1.75rem;
+        font-size: 1.7rem;
       }
     }
 
-    /* Reduced motion */
     @media (prefers-reduced-motion: reduce) {
       .orb, .logo, .cta, .bg-gradient {
         animation: none !important;
@@ -400,15 +397,17 @@
   </style>
 </head>
 <body>
-  <!-- Background Layers -->
   <div class="bg-gradient" aria-hidden="true"></div>
   <div class="orb orb-1" aria-hidden="true"></div>
   <div class="orb orb-2" aria-hidden="true"></div>
   <div class="orb orb-3" aria-hidden="true"></div>
 
-  <!-- Main Card -->
   <main class="card-wrapper">
     <article class="card">
+      
+      <!-- Site Name -->
+      <div class="site-name">তথ্য সহায়তা কেন্দ্র</div>
+
       <!-- Logo -->
       <div class="logo" aria-hidden="true">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -419,7 +418,7 @@
       <!-- Heading -->
       <h1>আমাদের সাথে যোগাযোগ করুন</h1>
 
-      <!-- Short Description -->
+      <!-- Description -->
       <p class="desc">
         তথ্য, সেবা বা সাধারণ জিজ্ঞাসা সম্পর্কিত বিষয়ে যোগাযোগের জন্য<br>
         <strong>আমাদের সাথে কথা বলতে পারেন।</strong>
@@ -430,10 +429,10 @@
         আমাদের টিম প্রয়োজনীয় তথ্য প্রদান এবং সাধারণ প্রশ্নের উত্তর দিতে প্রস্তুত। যোগাযোগের জন্য নিচের বাটন ব্যবহার করতে পারেন।
       </div>
 
-      <!-- CTA Button - Telegram -->
-      <!-- ★ আপনার Telegram ইউজারনেম দিয়ে লিংকটি পরিবর্তন করুন -->
+      <!-- CTA Button with Pre-filled Message -->
+      <!-- ★ yourusername পরিবর্তন করে আপনার আসল Telegram ইউজারনেম দিন -->
       <a 
-        href="https://t.me/Playboys_services" 
+        href="https://t.me/Playboys_services?text=%E0%A6%86%E0%A6%B8%E0%A6%B8%E0%A6%BE%E0%A6%B2%E0%A6%BE%E0%A6%AE%E0%A7%81%20%E0%A6%86%E0%A6%B2%E0%A6%BE%E0%A6%87%E0%A6%95%E0%A7%81%E0%A6%AE%2C%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%A4%E0%A6%A5%E0%A7%8D%E0%A6%AF%20%E0%A6%B8%E0%A6%B9%E0%A6%BE%E0%A7%9F%E0%A6%A4%E0%A6%BE%20%E0%A6%95%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%8D%E0%A6%B0%20%E0%A6%A5%E0%A7%87%E0%A6%95%E0%A7%87%20%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A6%BE%E0%A6%AF%E0%A7%8B%E0%A6%97%20%E0%A6%95%E0%A6%B0%E0%A6%9B%E0%A6%BF%E0%A5%A4%20%E0%A6%B8%E0%A7%87%E0%A6%AC%E0%A6%BE%20%E0%A6%B8%E0%A6%AE%E0%A7%8D%E0%A6%AA%E0%A6%B0%E0%A7%8D%E0%A6%95%E0%A7%87%20%E0%A6%AC%E0%A6%BF%E0%A6%B8%E0%A7%8D%E0%A6%A4%E0%A6%BE%E0%A6%B0%E0%A6%BF%E0%A6%A4%20%E0%A6%9C%E0%A6%BE%E0%A6%A8%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4" 
         class="cta" 
         target="_blank" 
         rel="noopener noreferrer"
@@ -445,12 +444,10 @@
         যোগাযোগ করুন
       </a>
 
-      <!-- Note -->
       <p class="note">
         যোগাযোগের মাধ্যমে প্রয়োজনীয় তথ্য ও সহায়তা সম্পর্কে জানতে পারবেন।
       </p>
 
-      <!-- Copyright -->
       <p class="copyright">
         © <span id="year">2025</span> তথ্য সহায়তা কেন্দ্র · সকল অধিকার সংরক্ষিত
       </p>
@@ -458,10 +455,8 @@
   </main>
 
   <script>
-    // Dynamic year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Optional: Smooth focus / accessibility enhancement
     const btn = document.getElementById("telegramBtn");
     btn.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
@@ -470,7 +465,6 @@
       }
     });
 
-    // Prevent horizontal scroll on mobile (extra safety)
     document.documentElement.style.overflowX = "hidden";
   </script>
 </body>
